@@ -23,11 +23,13 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
    
-    const { name, email, message } = formData;
+    const { message } = formData;
 
-    if (name === "" || email === "" || message === "") {
+    if ( message === "") {
       return;
     }
+
+     const email = "ecguidekw.app@gmail.com";
 
     var subject = 'Rahal Client Support';
     var emailBody = message;
@@ -140,23 +142,25 @@ function App() {
         <section id="contact">
           <h2>Contact Support</h2>
           <form id="contact-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
+            <label style={{ display: "none" }} htmlFor="name">Name:</label>
             <input
+              style={{ display: "none" }}
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
+              
             />
-            <label htmlFor="email">Email:</label>
+            <label  style={{ display: "none" }} htmlFor="email">Email:</label>
             <input
+              style={{ display: "none" }}
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
+              
             />
             <label htmlFor="message">Message:</label>
             <textarea
